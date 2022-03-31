@@ -66,6 +66,7 @@ export default {
         // Reset the title and description field values.
         //this.filtered_words = '';
         //this.document_text = '';
+        this.error = '';
     } catch (error) {
         // Log the error
         console.log(error);

@@ -42,7 +42,7 @@ class FormSubmission(unittest.TestCase):
         form_element = self.driver.find_element(By.NAME, "form-words")
         form_element.submit()
         error_value = self.driver.find_element(By.XPATH, "//div//p[@id='error']")
-        self.assertEqual('Error: Network Error', error_value.text)
+        self.assertNotEqual('Error: Network Error', error_value.text, "API is running")
 
 if __name__ == '__main__':
     unittest.main()
