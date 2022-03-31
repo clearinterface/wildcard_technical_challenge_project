@@ -21,7 +21,6 @@ def extraction_of_words(word_list):
 
 
 def replace_words(censoredWords_list, document_text):
-    #censoredWords = ['Some', 'Random', 'This is a phrase']
     regex = re.compile('|'.join(map(re.escape, censoredWords_list)))
     the_document = regex.sub("XXXX", document_text)
     return the_document

@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from rest_framework import mixins, status, viewsets
+from rest_framework import status, viewsets
 from rest_framework.exceptions import APIException
 import logging
 from django.conf import settings
