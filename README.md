@@ -78,3 +78,8 @@ Sample Response:
 * run `npm run serve` - this will run the vue app on port 8080.
 * See screenshot below:
 ![img.png](img.png)
+
+
+#### Selenium Test included to test UI.
+
+* run the following python file `python -m unittest ui_test.py` to execute automated tests

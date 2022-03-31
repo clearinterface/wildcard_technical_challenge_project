@@ -2,13 +2,13 @@
   <div class="container">
   <div class="row">
 <p class="bg-primary">...</p>
-    <form v-on:submit.prevent="submitForm">
+    <form v-on:submit.prevent="submitForm" name="form-words">
   <div class="field">
     <div class="form-control">
                 <label class="label">Censored words or phrases: </label>
     </div>
     <div class="form-control">
-          <input class="input" size="90" type="text" placeholder="Text input" id="filtered_words" v-model="filtered_words">
+          <input class="input" size="90" type="text" placeholder="Text input" id="filtered_words" name="filtered_words" v-model="filtered_words">
     </div>
     <p></p>
         <div class="form-control">
@@ -16,16 +16,16 @@
 
         </div>
         <div class="form-control">
-          <textarea class="input" cols="90" rows="5" id="document_text" v-model="document_text"></textarea>
+          <textarea class="input" cols="90" rows="5" name="document_text" id="document_text" v-model="document_text"></textarea>
     </div>
     <div class="form-control">
          <button type="submit">Submit</button>
     </div>
   </div>
     </form>
+        <p class="lead" id="error">{{ error }}</p>
 
-
-        <p class="lead">{{ censored_text }}</p>
+        <p class="lead" id="success">{{ censored_text }}</p>
 </div>
 
   </div>
@@ -42,7 +42,8 @@ export default {
     return {
         censored_text: '',
         filtered_words: '',
-        document_text: ''
+        document_text: '',
+        error: ''
     }
 },
 
@@ -68,6 +69,7 @@ export default {
     } catch (error) {
         // Log the error
         console.log(error);
+        this.error = error
     }
     }
   },
