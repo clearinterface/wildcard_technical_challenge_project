@@ -32,3 +32,15 @@ class CensoredWordsViewSet(viewsets.ModelViewSet):
             logger.error(e)
             raise APIException(e)
 
+    def retrieve(self, request, pk):
+        try:
+            cw = CensoredWords.objects.filter(pk=pk).values('document_text', 'filtered_words').first()
+            serializer = CensoredWordsSerializer(data=cw)
+            print(type(cw))
+            if serializer.is_valid():
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            else:
+                raise APIException(serializer.errors)
+        except Exception as e:
+            logger.error(e)
+            raise APIException(e)

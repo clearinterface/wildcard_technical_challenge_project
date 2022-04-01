@@ -4,8 +4,10 @@
 > The front end is a simple Vuejs page that hits the Django Rest Framework API.
 > This is a single page app and does not utilize any of Django's view. 
 > You will need to have both Django and vue running at the same time
-> Default port for Django: 8000
-> Defult port for VueJS: 8080
+
+>Default port for Django: 8000
+
+>Default port for VueJS: 8080
 
 To run django app, please follow the following steps (utilizing pipenv):
 
@@ -82,4 +84,9 @@ Sample Response:
 
 #### Selenium Test included to test UI.
 
+* Important: please make sure API is running to perform selenium testing
 * run the following python file `python -m unittest ui_test.py` to execute automated tests
+
+#### Django Unit test to test API endpoint
+
+* run the following command `python manage.py test`
