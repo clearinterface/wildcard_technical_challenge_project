@@ -4,6 +4,10 @@
 > The front end is a simple Vuejs page that hits the Django Rest Framework API.
 > This is a single page app and does not utilize any of Django's view. 
 > You will need to have both Django and vue running at the same time
+>
+> There is a custom wiretap middleware that I added  that 
+> logs all http request and response. You can see what it logs in the 
+> django admin page under messages `http://127.0.0.1:8000/admin/wiretap/message/`
 
 >Default port for Django: 8000
 
@@ -24,6 +28,7 @@ To run django app, please follow the following steps (NOT utilizing pipenv):
 
 * run the following command once you are in your python 3.9 virtual environment: `pip install -r requirements.txt`
 * cd into your project and run `python manage.py migrate`
+* run the following django command to enable the wiretap middleware `python manage.py setuptap` this automatically setup the middleware to log the url path of a request
 * there's django admin enabled, you can access it via `http://127.0.0.1:8000/admin/` this is useful to review the filtered document
 * if you want to use the django admin, you should create a user by running `python manage.py createsuperuser`
 

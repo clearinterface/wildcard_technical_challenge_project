@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wiretap',
     'api',
     'corsheaders',
     'rest_framework',
+
 
 ]
 
@@ -52,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wiretap.middlewares.WireTapMiddleware',
+
 ]
 
 ROOT_URLCONF = 'wildcard_technical_challenge.urls'
