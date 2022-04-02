@@ -13,6 +13,12 @@
 
 >Default port for VueJS: 8080
 
+> Censored words list accepts both single and double quote phrases and space and comma demimited
+> 
+> Sample censored word lists:  `into lowest,through "anger and disgust" "But that point was decided" 'rapid contortions' "forced to change", twist `
+
+
+
 To run django app, please follow the following steps (utilizing pipenv):
 
 * Please make sure you have pipenv install as it comes with pipenv file to facilitate the installation and setup
