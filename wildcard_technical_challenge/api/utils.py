@@ -2,15 +2,15 @@ import re
 
 
 def extraction_of_words(word_list):
-
+    word_list = word_list.replace("'",'"').replace('\\','')
     quoted_phrases = word_list.split('"')[1::2]
     if len(quoted_phrases) > 0:
         for q in quoted_phrases:
             word_list = word_list.replace(q, '').replace('"', '').strip()
-    else:
-        quoted_phrases = word_list.split("'")[1::2]
-        for q in quoted_phrases:
-            word_list = word_list.replace(q, '').replace("'", '').strip()
+    # else:
+    #     quoted_phrases = word_list.split("'")[1::2]
+    #     for q in quoted_phrases:
+    #         word_list = word_list.replace(q, '').replace("'", '').strip()
 
     # replace word_list delimeter with pipe
     word_list = word_list.replace(" ", "|").replace(",", "|")
